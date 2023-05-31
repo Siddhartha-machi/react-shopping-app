@@ -2,35 +2,22 @@ import { Button } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { navigationConsts } from './Constants'
 
-const NavigationComponent = () => {
+
+const NavigationComponent = (props) => {
 
     const navigate = useNavigate()
     const path = useLocation()
 
-    const navigationConsts = [
-        {
-            id : 0,
-            label : 'Home',
-            route : '/',
-        },
-        {
-            id : 1,
-            label : 'About Us',
-            route : '/about-us',
-        },
-        {
-            id : 2,
-            label : 'Contact us',
-            route : '/contact-us',
-        }
-    ]
+    
 
 
     return (
         <Box
             sx={{
                 display : 'flex',
+                flexDirection : props.direction ? 'column' : 'row',
                 backgroundColor : '#F5F5F5',
                 alignItems : 'center',
                 justifyContent : 'center'
@@ -45,6 +32,7 @@ const NavigationComponent = () => {
                             color : path.pathname === item.route?'black' : 'grey',
                             fontWeight : 'bold',
                             mx : '10px',
+                            fontSize : props.direction ? '10px' : 'auto',
                             '&:Hover' : {
                                 color : 'black',
                                 transform : 'scale(1.02)'

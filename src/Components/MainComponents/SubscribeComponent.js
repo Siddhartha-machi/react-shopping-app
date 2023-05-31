@@ -9,17 +9,18 @@ const SubscribeComponent = () => {
             display : 'flex',
             flexDirection : 'column',
             alignItems :'center',
-            justifyContent : 'center',
+            justifyContent : 'space-evenly',
             borderTop : `1px solid lightgrey`,
             borderBottom : `1px solid lightgrey`,
-            p : '12px',
+            minHeight : '10rem',
+            maxHeight : '10rem',
             my : '10px'
         }}
     >
         <Typography
             sx={{
                 fontWeight : 550,
-                py : '10px'
+                // pb : '10px'
             }}
         >
             Get our latest news and special sales
@@ -27,7 +28,7 @@ const SubscribeComponent = () => {
         <Typography
             sx={{
                 fontWeight : 550,
-                pb : '10px',
+                // pb : '10px',
                 color : 'grey',
                 fontSize : { md : '10px', lg : '12px'}
             }}

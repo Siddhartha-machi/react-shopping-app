@@ -1,6 +1,7 @@
 import { Box } from '@mui/material'
 import React from 'react'
 import { Outlet } from 'react-router-dom'
+import FooterLinksComponent from './FooterLinksComponent'
 import HeaderComponent from './HeaderComponent'
 import NavigationComponent from './NavigationComponent'
 import SubscribeComponent from './SubscribeComponent'
@@ -23,7 +24,6 @@ const BaseAppComponent = () => {
     >
         <HeaderComponent />
         <NavigationComponent />
-        {/*  */}
         <Box
           sx={{
             display : 'flex',
@@ -37,6 +37,7 @@ const BaseAppComponent = () => {
             />
         </Box>
         <SubscribeComponent />
+        <FooterLinksComponent />
     </Box>
   )
 }
