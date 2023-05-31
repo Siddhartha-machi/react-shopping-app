@@ -12,7 +12,7 @@ const LandingSection = () => {
         sx={{
             display  : 'flex',
             backgroundImage : `url(${image})`,
-            backgroundSize : large ? 'cover' : 'contain',
+            backgroundSize : large ? '100%' : 'contain',
             maxHeight : { md : '440px', lg : '500px'},
             flex : 1,
             backgroundRepeat : 'no-repeat',
