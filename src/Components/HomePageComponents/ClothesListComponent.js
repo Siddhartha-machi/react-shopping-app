@@ -1,13 +1,11 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 import React from 'react'
-import image1 from '../../Images/summerCollection1.jpg'
-import image2 from '../../Images/summerCollection2.jpg'
-import image3 from '../../Images/summerCollection3.jpg'
 
 
-const ClothesListComponent = () => {
 
-    const clothesList = [image1, image2, image3]
+const ClothesListComponent = (props) => {
+
+    
 
   return (
     <Box
@@ -16,14 +14,14 @@ const ClothesListComponent = () => {
             
         }}
     >
-        {clothesList.map((image, index) => {
+        {props.list.map((image, index) => {
             return (
                 <Box
                     key={index}
                     sx={{
                         display : 'flex',
                         position : 'relative',
-                        pr : index != clothesList.length - 1 ? '10px' : '0px'
+                        pr : index != props.list.length - 1 ? '10px' : '0px'
                     }}
                 >
                     <Box 
@@ -34,18 +32,39 @@ const ClothesListComponent = () => {
                             
                         }}
                     /> 
-                    <Typography
+                    <Box
                         sx={{
                             position : 'absolute',
                             display : 'flex',
-                            bottom : 0, left : 0, right: 0,
-                            justifyContent : 'center',
-                            alignItems : 'center',
-                            fontWeight : 'bold',
+                            flexDirection : 'column',
+                            bottom : 0, left : 0,
+                            p : '15px'
                         }}
                     >
-                        Summer Clothes 2021/22
-                    </Typography>
+                        <Typography
+                            sx={{
+                                fontWeight : 'bold',
+                                color : 'white'
+                            }}
+                        >
+                            Summer Clothes 2021/22
+                        </Typography>
+                        {props.extra 
+                        ? <Button
+                            variant='contained'
+                            sx={{
+                                textTransform : 'none',
+                                backgroundColor : 'white',
+                                color : 'black',
+                                mr : 'auto',
+                                mt : '10px'
+                            }}
+                        >
+                            Shop
+                        </Button>
+                        : false}
+                    </Box>
+                    
                 </Box>
             )
         })}

@@ -20,7 +20,7 @@ const NavigationComponent = () => {
             route : '/about-us',
         },
         {
-            id : 0,
+            id : 2,
             label : 'Contact us',
             route : '/contact-us',
         }
