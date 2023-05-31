@@ -6,6 +6,7 @@ import NavigationComponent from './NavigationComponent'
 
 const BaseAppComponent = () => {
   return (
+    
     <Box
         sx={{
             display : 'flex',
