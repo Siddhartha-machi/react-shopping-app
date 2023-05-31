@@ -1,6 +1,7 @@
 import { Box } from '@mui/material'
 import React from 'react'
 import { Outlet } from 'react-router-dom'
+import Footer from './Footer'
 import FooterLinksComponent from './FooterLinksComponent'
 import HeaderComponent from './HeaderComponent'
 import NavigationComponent from './NavigationComponent'
@@ -38,6 +39,7 @@ const BaseAppComponent = () => {
         </Box>
         <SubscribeComponent />
         <FooterLinksComponent />
+        <Footer />
     </Box>
   )
 }

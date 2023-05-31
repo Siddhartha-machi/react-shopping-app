@@ -4,6 +4,12 @@ import c3 from '../../Images/clothes3.avif'
 import c4 from '../../Images/clothes4.avif'
 import c5 from '../../Images/clothes5.avif'
 
+import Insta from '../../Icons/instagram.svg'
+import Fb from '../../Icons/facebook.svg'
+import Twitter from '../../Icons/twitter.svg'
+import LinkedIn from '../../Icons/linkedin.svg'
+
+
 const navigationConsts = [
     {
         id : 0,
@@ -67,11 +73,17 @@ const serviceData = [
     'Send us an email'
 ]
 
-
+const socialIcons = [
+    Insta,
+    Fb,
+    Twitter,
+    LinkedIn
+]
 
 export {
     navigationConsts,
     clothesList,
     deliveryDetails,
-    serviceData
+    serviceData,
+    socialIcons
 }
