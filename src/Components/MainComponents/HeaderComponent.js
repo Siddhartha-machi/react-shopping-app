@@ -4,7 +4,7 @@ import React from 'react'
 import { headerList } from './Constants'
 import MenuIcon from '@mui/icons-material/Menu';
 
-const HeaderComponent = () => {
+const HeaderComponent = (props) => {
 
     
 
@@ -24,6 +24,7 @@ const HeaderComponent = () => {
             sx={{
                 display : { xs : 'flex', md : 'none'} ,
             }}
+            onClick={props.openDrawer}
         >
             <MenuIcon />
         </IconButton>

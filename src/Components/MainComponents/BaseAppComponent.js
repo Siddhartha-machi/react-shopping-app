@@ -4,10 +4,22 @@ import { Outlet } from 'react-router-dom'
 import Footer from './Footer'
 import FooterLinksComponent from './FooterLinksComponent'
 import HeaderComponent from './HeaderComponent'
+import TemporaryDrawer from './MobileNavigationComponent'
 import NavigationComponent from './NavigationComponent'
 import SubscribeComponent from './SubscribeComponent'
 
 const BaseAppComponent = () => {
+
+  const [state, setState] = React.useState(false);
+
+  const toggleDrawer = () => {
+    // if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+    //   return;
+    // }
+
+    setState(prev => !prev)
+  };
+
   return (
 
     <Box
@@ -23,7 +35,13 @@ const BaseAppComponent = () => {
             
         }}
     >
-        <HeaderComponent />
+        <TemporaryDrawer 
+          state={state}
+          toggleDrawer={() => toggleDrawer()}
+        />
+        <HeaderComponent 
+          openDrawer={() => toggleDrawer()}
+        />
         <NavigationComponent />
         <Box
           sx={{
