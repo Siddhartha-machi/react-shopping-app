@@ -1,6 +1,7 @@
 import { Box } from '@mui/system';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
+import AboutComponent from './Components/AboutPageComponents/AboutComponent';
 import { HomeComponent } from './Components/HomePageComponents/HomeComponent';
 import BaseAppComponent from './Components/MainComponents/BaseAppComponent';
 
@@ -15,7 +16,7 @@ const routes = createBrowserRouter([
         },
         {
           path : 'about-us',
-          element : <Box>About Us</Box>
+          element : <AboutComponent />
         },
         {
           path : 'contact-us',
