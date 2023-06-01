@@ -1,12 +1,7 @@
-import { Box, IconButton, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import React from 'react'
-import c1 from '../../Images/clothes1.avif'
-import c2 from '../../Images/clothes2.avif'
-import c3 from '../../Images/clothes3.avif'
-import c4 from '../../Images/clothes4.avif'
-import c5 from '../../Images/clothes5.avif'
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import { clothesList } from '../MainComponents/Constants'
+import { LikeComponent } from './LikeComponent'
 
 const ShopListComponent = () => {
     
@@ -17,24 +12,27 @@ const ShopListComponent = () => {
         }}
     >
         {clothesList.map((item) => {
+            
             return(
                 <Box    
                     key={item.id}
                     sx={{
                         display : 'flex',
                         flexDirection : 'column',
-                        pr : item.id != clothesList.length  ? '10px' : '0px'
+                        pr : item.id !== clothesList.length  ? '10px' : '0px'
                     }}
                 >
                     <Box
+                        key={`clothes-image-${item.id}`}
                         sx={{
                             display : 'flex',
                             position : 'relative',
                         }}
                     >
                         <Box 
-                            key={item.id}
+                            key={`image-${item.id}`}
                             component={'img'}
+                            alt={item.text}
                             src={item.image}
                             sx={{
                                 
@@ -42,17 +40,7 @@ const ShopListComponent = () => {
                                 
                             }}
                         />
-                        <IconButton
-                            key={item.id}
-                            sx={{
-                                position : 'absolute',
-                                backgroundColor : 'rgba(0, 0, 0, 0.8)',
-                                right :5,top:5,
-                                color : 'white'
-                            }}
-                        >
-                            <FavoriteBorderOutlinedIcon />
-                        </IconButton>
+                        <LikeComponent />
                     </Box>
                     <Box
                         sx={{
