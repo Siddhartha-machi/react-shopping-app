@@ -21,7 +21,8 @@ const ClothesListComponent = (props) => {
                     sx={{
                         display : 'flex',
                         position : 'relative',
-                        pr : index != props.list.length  ? '10px' : '0px'
+                        pr : index != props.list.length - 1 ? '10px' : '0px',
+                        ...props.imageStyles
                     }}
                 >
                     <Box 

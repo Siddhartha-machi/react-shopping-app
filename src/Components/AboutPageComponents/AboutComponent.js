@@ -6,6 +6,7 @@ import ClothesListComponent from '../HomePageComponents/ClothesListComponent'
 import { aboutPageImages } from '../MainComponents/Constants'
 import AboutDesctiptionComponent from './AboutDesctiptionComponent'
 import teamImage from '../../Images/teamImage.avif'
+import { RatingsComponent } from './RatingsComponent'
 
 
 const AboutDataComponent = () => {
@@ -56,6 +57,7 @@ const AboutComponent = () => {
         sx={{
             display : 'flex',
             flexDirection : 'column',
+            justifyContent : 'space-between',
             flex : 1,
         }}
     >
@@ -78,6 +80,9 @@ const AboutComponent = () => {
           <ClothesListComponent 
             list={[aboutPageImages[2]]}
             primaryLabel={'WE DARE TO DESIGN THE FUTURE'}
+            imageStyles={{
+              pl : '10px'
+            }}
             styles={{
               fontSize : '25px',
               color : 'black',
@@ -108,7 +113,7 @@ const AboutComponent = () => {
           />
         </Box>
 
-
+        <RatingsComponent />
     </Box>
   )
 }

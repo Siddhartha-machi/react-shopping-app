@@ -14,7 +14,7 @@ const SubscribeComponent = () => {
             borderBottom : `1px solid lightgrey`,
             minHeight : '10rem',
             maxHeight : '10rem',
-            my : '10px'
+            py : '10px'
         }}
     >
         <Typography
