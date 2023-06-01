@@ -25,21 +25,28 @@ import SearchIcon from '@mui/icons-material/Search';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 
+import HomeIcon from '@mui/icons-material/Home';
+import InfoIcon from '@mui/icons-material/Info';
+import ContactsIcon from '@mui/icons-material/Contacts';
+
 const navigationConsts = [
     {
         id : 0,
         label : 'Home',
         route : '/',
+        Icon : HomeIcon
     },
     {
         id : 1,
         label : 'About Us',
         route : '/about-us',
+        Icon : InfoIcon
     },
     {
         id : 2,
         label : 'Contact us',
         route : '/contact-us',
+        Icon : ContactsIcon
     }
 ]
 
@@ -184,6 +191,8 @@ const headerList = [
     }
 ]
 
+const SITENAME = 'APPARELIX'
+
 export {
     navigationConsts,
     clothesList,
@@ -193,5 +202,6 @@ export {
     aboutPageImages,
     contactInfo,
     formData,
-    headerList
+    headerList,
+    SITENAME
 }
