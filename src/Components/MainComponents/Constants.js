@@ -13,6 +13,10 @@ import api1 from '../../Images/aboutImage1.avif'
 import api2 from '../../Images/aboutImage2.avif'
 import api3 from '../../Images/aboutImage3.avif'
 
+import PhoneIcon from '@mui/icons-material/Phone';
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import ScheduleIcon from '@mui/icons-material/Schedule';
 
 const navigationConsts = [
     {
@@ -90,11 +94,42 @@ const aboutPageImages = [
     api3
 ]
 
+
+const contactInfo = [
+    {
+        id : 0,
+        Icon : PhoneIcon,
+        label : 'Phone Number',
+        text : 'Call Us: 800-123-4567'
+    },
+    {
+        id : 1,
+        Icon : EmailOutlinedIcon,
+        label : 'Email:',
+        text : 'demo@demo.com'
+    },
+    {
+        id : 2,
+        Icon : LocationOnIcon,
+        label : 'Location',
+        text : '2972 Westheimer Rd. Santa Ana, Illinois 85486'
+    },
+    {
+        id : 3,
+        Icon : ScheduleIcon,
+        label : 'Opening Hours',
+        text : `Mon-Fri: 9:00 am - 6:00 pm
+                Sat: 9:00 am - 4:00 pm
+                Sun: 9:00 am - 2:00 pm`
+    },
+]
+
 export {
     navigationConsts,
     clothesList,
     deliveryDetails,
     serviceData,
     socialIcons,
-    aboutPageImages
+    aboutPageImages,
+    contactInfo
 }

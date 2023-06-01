@@ -1,6 +1,7 @@
-import { Box } from '@mui/material'
+import { Box, Divider } from '@mui/material'
 import React from 'react'
 import SectionNameComponent from '../HomePageComponents/SectionNameComponent'
+import ContactInfoComponent from './ContactInfoComponent'
 
 const ContactPage = () => {
   return (
@@ -9,6 +10,7 @@ const ContactPage = () => {
             display : 'flex',
             flex : 1,
             flexDirection : 'column',
+            justifyContent : 'space-between'
         }}
     >
         <SectionNameComponent 
@@ -16,28 +18,33 @@ const ContactPage = () => {
             styles={{
                 backgroundColor : 'lightgrey' ,
                 fontSize : { md : '20px'},
-                py : '18px'
+                py : '20px',
+                mb : '10px',
+                color : 'black'
             }}
         />
         <Box
             sx={{
                 display : 'flex',
-                
+                alignItems : 'center',
+                justifyContent : 'space-evenly',
+                mb : '10px',
+                mt : '15px',
             }}
         >
             <Box
                 sx={{
                     display : 'flex',
-                    flex : 0.5,
-                    borderRight : `1px solid grey`
+                    flex : 0.4,
                 }}
             > 
-                Contact info
+                <ContactInfoComponent />
             </Box>
+            <Divider  orientation="vertical"/>
             <Box
                 sx={{
                     display : 'flex',
-                    flex : 0.5
+                    flex : 0.4
                 }}
             > 
                 Contact form
