@@ -11,7 +11,8 @@ const SectionNameComponent = (props) => {
             justifyContent :'center',
             fontSize : { md : '16px'},
             color : 'grey',
-            py: '15px'
+            py: '15px',
+            ...props.styles
           }}
         >
           {props.label}

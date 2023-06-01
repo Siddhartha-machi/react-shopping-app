@@ -59,6 +59,7 @@ const AboutComponent = () => {
             flexDirection : 'column',
             justifyContent : 'space-between',
             flex : 1,
+            px : { xs : '15px', lg : '0px'}
         }}
     >
         <LandingSection 

@@ -82,6 +82,7 @@ export const HomeComponent = () => {
             display : 'flex',
             flex : 1,
             flexDirection : 'column',
+            px : { xs : '15px', lg : '0px'}
             
         }}
     >
@@ -91,7 +92,7 @@ export const HomeComponent = () => {
         </LandingSection>
 
         <SectionNameComponent label='Trending Clothing'/>
-        
+
         <ClothesListComponent 
           list={clothesList}
           primaryLabel={'Summer Clothes 2021/22'}

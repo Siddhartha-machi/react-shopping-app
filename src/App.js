@@ -2,6 +2,7 @@ import { Box } from '@mui/system';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import AboutComponent from './Components/AboutPageComponents/AboutComponent';
+import ContactPage from './Components/ContactPageComponents/ContactPage';
 import { HomeComponent } from './Components/HomePageComponents/HomeComponent';
 import BaseAppComponent from './Components/MainComponents/BaseAppComponent';
 
@@ -20,7 +21,7 @@ const routes = createBrowserRouter([
         },
         {
           path : 'contact-us',
-          element : <Box>Contact Us</Box>
+          element : <ContactPage />
         }
     ]
   },

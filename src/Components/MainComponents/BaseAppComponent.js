@@ -30,7 +30,7 @@ const BaseAppComponent = () => {
             display : 'flex',
             flex : 1,
             py : '15px',
-            px : { xs : '15px', lg : '0px'}
+            
           }}
         >
             <Outlet 
