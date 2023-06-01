@@ -66,7 +66,8 @@ const SubscribeComponent = () => {
                     color : 'white',
                     mx : { xs : 0, md : '10px'},
                     my : { xs : '10px', md : '0px'},
-                    fontWeight : 'bold'
+                    fontWeight : 'bold',
+                    borderRadius : { xs : '10px', md : 0}
                 }}
             >
                 Get!

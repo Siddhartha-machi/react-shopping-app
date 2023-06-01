@@ -27,6 +27,7 @@ const ContactPage = () => {
         <Box
             sx={{
                 display : 'flex',
+                flexDirection : { xs : 'column', md : 'row'},
                 alignItems : 'center',
                 justifyContent : 'space-evenly',
                 mb : '10px',
@@ -41,7 +42,7 @@ const ContactPage = () => {
             > 
                 <ContactInfoComponent />
             </Box>
-            <Divider  orientation="vertical"/>
+            <Divider  orientation="vertical" sx={{ display : {xs : 'none', md : 'flex'}}}/>
             <Box
                 sx={{
                     display : 'flex',

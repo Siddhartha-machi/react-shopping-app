@@ -84,7 +84,8 @@ const ContactForm = () => {
                     textTransform : 'none',
                     fontWeight : 'bold',
                     my : '10px',
-                    py : '10px'
+                    py : '10px',
+                    borderRadius : { xs : '10px', md : 0}
                 }}
             > 
                 Submit
