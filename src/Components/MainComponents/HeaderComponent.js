@@ -1,31 +1,12 @@
-import { Button, Typography } from '@mui/material'
+import { Button, IconButton, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
-
-// Header Icons
-import SearchIcon from '@mui/icons-material/Search';
-import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { headerList } from './Constants'
+import MenuIcon from '@mui/icons-material/Menu';
 
 const HeaderComponent = () => {
 
-    const headerList = [
-        {
-            id : 0,
-            label : 'Search',
-            Icon : SearchIcon
-        },
-        {
-            id : 1,
-            label : 'Sign In',
-            Icon : PersonOutlineOutlinedIcon
-        },
-        {
-            id : 2,
-            label : 'Cart',
-            Icon : ShoppingCartOutlinedIcon
-        }
-    ]
+    
 
   return (
     <Box
@@ -35,9 +16,13 @@ const HeaderComponent = () => {
             py : '10px',
             position : 'relative',
             alignItems : 'center',
-            justifyContent : 'space-around'
+            mx : { xs : '5px', md : '0px'},
+            justifyContent : { md : 'space-around', xs : 'space-between'}
         }}
     >
+        <IconButton>
+            <MenuIcon />
+        </IconButton>
         {/* Site name and caption */}
         <Box
             sx={{
@@ -52,7 +37,7 @@ const HeaderComponent = () => {
                 sx={{
                     fontWeight : 1000,
                     mb : 0,
-                    
+                    fontSize : { md : '20px', xs : '15px'}
                 }}
             >
                 APPARELIX
@@ -61,17 +46,43 @@ const HeaderComponent = () => {
                 variant='caption'
                 sx={{
                     color : 'grey',
-                    fontSize : '10px'
+                    fontSize : { md : '10px', xs : '6px'}
                 }}
             >
-                Shopify Clean Theme
+                GytWorkZ Clean Theme
             </Typography>
         </Box>
 
-            
+        {/* Mobile screen buttons */}
+         <Box
+            sx={{
+                display : { xs : 'flex', md : 'none'} ,
+                px : '3px',
+                right : 0,
+            }}
+        >
+            {
+                headerList.map((item) => {
+                    return (
+                        <IconButton
+                            key={item.id}
+                            sx={{
+                                p : '3px',
+                                color : 'grey',
+                                ...item.display
+                            }}
+                        >
+                            <item.Icon />
+                        </IconButton>
+                    )
+                })
+            }
+        </Box> 
+
+        {/* Large screen button */}
         <Box
             sx={{
-                display : 'flex',
+                display : { md : 'flex', xs : 'none'} ,
                 position : 'absolute',
                 right : 0,
                 px : '10px'
@@ -85,7 +96,8 @@ const HeaderComponent = () => {
                             endIcon={<item.Icon />}
                             sx={{
                                 textTransform : 'none',
-                                color : 'grey'
+                                color : 'grey',
+                                
                             }}
                         >
                             {item.label}

@@ -16,7 +16,7 @@ const NavigationComponent = (props) => {
     return (
         <Box
             sx={{
-                display : 'flex',
+                display : { md : 'flex', xs : 'none'},
                 flexDirection : props.direction ? 'column' : 'row',
                 backgroundColor : '#F5F5F5',
                 alignItems : 'center',

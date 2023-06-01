@@ -19,6 +19,12 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ScheduleIcon from '@mui/icons-material/Schedule';
 import { OutlinedInput, TextField } from '@mui/material'
 
+
+// Header Icons
+import SearchIcon from '@mui/icons-material/Search';
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
+
 const navigationConsts = [
     {
         id : 0,
@@ -160,6 +166,24 @@ const formData = [
     }
 ]
 
+const headerList = [
+    {
+        id : 0,
+        label : 'Search',
+        Icon : SearchIcon,
+    },
+    {
+        id : 1,
+        label : 'Sign In',
+        Icon : PersonOutlineOutlinedIcon,
+    },
+    {
+        id : 2,
+        label : 'Cart',
+        Icon : ShoppingBagOutlinedIcon,
+    }
+]
+
 export {
     navigationConsts,
     clothesList,
@@ -168,5 +192,6 @@ export {
     socialIcons,
     aboutPageImages,
     contactInfo,
-    formData
+    formData,
+    headerList
 }
