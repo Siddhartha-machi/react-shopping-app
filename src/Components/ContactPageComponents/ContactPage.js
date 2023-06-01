@@ -1,6 +1,7 @@
 import { Box, Divider } from '@mui/material'
 import React from 'react'
 import SectionNameComponent from '../HomePageComponents/SectionNameComponent'
+import ContactForm from './ContactForm'
 import ContactInfoComponent from './ContactInfoComponent'
 
 const ContactPage = () => {
@@ -47,7 +48,7 @@ const ContactPage = () => {
                     flex : 0.4
                 }}
             > 
-                Contact form
+                <ContactForm />
             </Box>
         </Box>
     </Box>

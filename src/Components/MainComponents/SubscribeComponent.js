@@ -1,4 +1,4 @@
-import { Button, TextField, Typography } from '@mui/material'
+import { Button, OutlinedInput, TextField, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
 
@@ -37,21 +37,24 @@ const SubscribeComponent = () => {
              For that purpose, please ﬁnd our contact info in the legal notice.`}
         </Typography>
         <Box
+            component={'form'}
             sx={{
                 display : 'flex'
             }}
         >
-            <input
+            <OutlinedInput
                 id="outlined-basic" 
-                placeholder="Email Address" 
-                sx={{
-                    my : '5px',
-                    fontWeight : 'bold'
+                placeholder="Email Address *" 
+                required
+                type='email'
+                inputProps={{
+                    my : '5px'
                 }}
             >
                 
-            </input>
+            </OutlinedInput>
             <Button
+                type='submit'
                 variant='contained'
                 sx={{
                     textTransform : 'none',

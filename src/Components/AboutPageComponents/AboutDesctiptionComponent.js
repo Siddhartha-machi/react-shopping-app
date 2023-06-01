@@ -12,41 +12,58 @@ const AboutDesctiptionComponent = () => {
         sx={{
             display : 'flex',
             flexDirection : 'column',
-            flexGrow : 0.4,
-            alignItems : 'flex-start',
-            justifyContent : 'space-evenly'
+            flexGrow : 0.5,
+            minWidth : { md : '250px', lg : '350px'},
+            justifyContent : 'center',
+            p : '10px',
         }}
     >
         <Typography
-            variant='h4'
+            variant='h6'
             sx={{
-                fontWeight : 'bold'
+                fontWeight : 'bold',
+                pb :  { md : '12px'},
             }}
         >
             A TEAM THAT'S
-            EMPOWERED,<br />
-            DIVERSE<br />
+            EMPOWERED,
+            DIVERSE
             AND INCLUSIVE
         </Typography>
         <Typography
             variant='subtitle1'
             sx={{
-                fontWeight : 'bold',
+                fontSize : { md : '12px'},
+                pb :  { md : '12px'},
             }}
         >
             Lorem ipsum dolor sit amet, consectetur
             adipiscing elit, sed do eiusmod tempor
             incididunt.
         </Typography>
-        <ul>
+        
+        <Box
+            sx={{
+                display : 'flex',
+                flexDirection : 'column',
+                pb :  { md : '12px'},
+            }}
+        >
             {bullets.map((text, index) => {
                 return (
-                    <li key={index}>
+                    <Typography 
+                        component={'li'}
+                        key={index}
+                        sx={{
+                            fontSize : { md : '12px'}
+                        }}
+                    >
                         {text}
-                    </li>
+                    </Typography>
                 )
             })}
-        </ul>
+        </Box>
+        
     </Box>
   )
 }

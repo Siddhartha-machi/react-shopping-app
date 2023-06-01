@@ -5,7 +5,7 @@ import { Box } from '@mui/material';
 
 const RateComponent = () => {
 
-    const [rating, setrating] = React.useState(4)
+    const [rating, setrating] = React.useState(5)
 
     return (
     <Box

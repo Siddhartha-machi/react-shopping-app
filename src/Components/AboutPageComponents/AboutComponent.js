@@ -5,7 +5,7 @@ import aboutLandingImage from '../../Images/aboutBannerImage.jpg'
 import ClothesListComponent from '../HomePageComponents/ClothesListComponent'
 import { aboutPageImages } from '../MainComponents/Constants'
 import AboutDesctiptionComponent from './AboutDesctiptionComponent'
-import teamImage from '../../Images/teamImage.avif'
+import teamImage from '../../Images/teamImage.jpg'
 import { RatingsComponent } from './RatingsComponent'
 
 
@@ -15,15 +15,15 @@ const AboutDataComponent = () => {
       sx={{
         display : 'flex',
         flexDirection : 'column',
-        color : 'purple',
-        flex : 1,
+        color : 'white',
+        flex : 0.6,
         alignItems : 'center',
         justifyContent : 'center',
-
+        mx : 'auto'
       }}
     >
       <Typography
-        variant='h5'
+        variant='h4'
         sx={{
           fontWeight : 1000,
           textAlign : 'center'

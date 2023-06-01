@@ -17,6 +17,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ScheduleIcon from '@mui/icons-material/Schedule';
+import { OutlinedInput, TextField } from '@mui/material'
 
 const navigationConsts = [
     {
@@ -124,6 +125,41 @@ const contactInfo = [
     },
 ]
 
+const formData = [
+    {
+        id : 0,
+        label : 'Name',
+        Component : OutlinedInput,
+        props : {
+            id : 'name',
+            type : 'text',
+
+        },
+    },
+    {
+        id : 1,
+        label : 'Email',
+        Component : OutlinedInput,
+        props : {
+            id : 'email',
+            type : 'email',
+
+        },
+    },
+    {
+        id : 2,
+        label : 'Message',
+        Component : TextField,
+        props : {
+            id : 'meassage',
+            type : 'text',
+            multiline : true,
+            minRows : 2,
+            maxRows : 2
+        },
+    }
+]
+
 export {
     navigationConsts,
     clothesList,
@@ -131,5 +167,6 @@ export {
     serviceData,
     socialIcons,
     aboutPageImages,
-    contactInfo
+    contactInfo,
+    formData
 }

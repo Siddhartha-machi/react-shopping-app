@@ -10,7 +10,8 @@ export const RatingsComponent = () => {
             justifyContent : 'center',
             alignItems : 'center',
             mt : '12px',
-            
+            minHeight : '250px',
+            // backgroundColor :' green'
         }}
     >
         <Box

@@ -59,7 +59,7 @@ const Footer = () => {
                         key={index}
                         sx={{
                             maxWidth : '1.3rem',
-                            mx : '3px'
+                            mx : '6px'
                         }}
                     />
                 )

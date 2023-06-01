@@ -44,6 +44,7 @@ const ContactInfoComponent = () => {
             {contactInfo.map((item) => {
                 return(
                     <Box
+                        key={item.id}
                         sx={{
                             display : 'flex',
                             flexDirection : 'column',
