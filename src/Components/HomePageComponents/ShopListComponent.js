@@ -1,42 +1,52 @@
-import { Box, Button, createTheme, IconButton, Typography, useMediaQuery } from '@mui/material'
+import { Box, createTheme, IconButton, Typography, useMediaQuery } from '@mui/material'
 import React from 'react'
 import { clothesList } from '../MainComponents/Constants'
 import { LikeComponent } from './LikeComponent'
 import FiberManualRecordOutlinedIcon from '@mui/icons-material/FiberManualRecordOutlined';
 import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import CarouselImageComponent from './CarouselImageComponent';
 
 const ShopListComponent = () => {
     
-    const newList = [...clothesList,...clothesList.slice(1)]
+    const newList = [...clothesList,...clothesList]
     const theme = createTheme()
-    const medium = useMediaQuery(theme.breakpoints.up('md'))
+    const medium = useMediaQuery(theme.breakpoints.up('sm'))
     
 
     const lst = (slice) => {
         let sliceLst = []
         const groups = parseInt(newList.length / slice)
-        for(let i = 0; i <= groups; i++){
+        for(let i = 0; i < groups; i++){
             sliceLst.push(i)
         }
         return sliceLst
     }
     const groupsLst = medium ? lst(5) : lst(2)
     const  groupCount = medium 
-                            ? parseInt(newList.length / 5)
-                            : parseInt(newList.length / 2)
+                            ? parseInt(newList.length / 5) - 1
+                            : parseInt(newList.length / 2) - 1
     const [index, setindex] = React.useState({
-        index : 0,
-        group : 0
+        // index : 0,
+        group : 0,
+        medium : medium
     })
 
     const updateState = (forward) => {
         if(forward){
             setindex(prev => {
                 if(medium){
-                    return { index : prev.index + 5, group : prev.group + 1}
+                    return {
+                        ...prev, 
+                        // index : prev.index + 5, 
+                        group : prev.group + 1}
                 }else{
-                    return { index : prev.index + 2, group : prev.group + 1}
+                    return {
+                        ...prev, 
+                        // index : prev.index + 2, 
+                        group : prev.group + 1
+                    }
                 } 
                       
                     
@@ -44,14 +54,35 @@ const ShopListComponent = () => {
         }else{
             setindex(prev => {
                 if(medium){
-                    return { index : prev.index - 5, group : prev.group - 1}
+                    return {
+                        ...prev, 
+                        // index : prev.index - 5, 
+                        group : prev.group - 1}
                 }else{
-                    return { index : prev.index - 2, group : prev.group - 1}
+                    return {
+                        ...prev, 
+                        // index : prev.index - 2, 
+                        group : prev.group - 1}
                 } 
             })
         }
+        console.log('state', index)
         
     }
+
+    React.useEffect(() => {
+
+        let set = true
+        if(set && index.medium !== medium){
+            setindex(prev => {
+                return {
+                    // index : 0, 
+                    group : 0, medium : !prev.medium}
+            })
+            console.log('Screen change detected')
+        }
+
+    },[index.medium, medium])
     
     
     
@@ -69,66 +100,15 @@ const ShopListComponent = () => {
             }}
         >
             {newList.slice(
-                index.index, 
-                index.index + medium ? 5 : 2).map((item) => {
+                (index.group * (medium ? 5 : 2)), 
+                ((index.group + 1) * (medium ? 5 : 2))
+                ).map((item, index) => {
             
                 return(
-                    <Box    
-                        key={item.id}
-                        sx={{
-                            display : 'flex',
-                            flexDirection : 'column',
-                            pr : item.id !== clothesList.length  ? '10px' : '0px'
-                        }}
-                    >
-                        <Box
-                            key={`clothes-image-${item.id}`}
-                            sx={{
-                                display : 'flex',
-                                position : 'relative',
-                            }}
-                        >
-                            <Box 
-                                key={`image-${item.id}`}
-                                component={'img'}
-                                alt={item.text}
-                                src={item.image}
-                                sx={{
-                                    
-                                    maxWidth : '100%',
-                                    
-                                }}
-                            />
-                            <LikeComponent />
-                        </Box>
-                        <Box
-                            sx={{
-                                display : 'flex',
-                                flexDirection : 'column',
-                            }}
-                        >
-                            <Typography
-                                sx={{
-                                    color : 'grey',
-                                    textAlign : 'center',
-                                    fontWeight : 'bold',
-                                    fontSize : {md : '12px', lg : '15px'},
-                                    py : '3px'
-                                }}
-                            >
-                                {item.text}
-                            </Typography>
-                            <Typography
-                                sx={{
-                                    textAlign : 'center',
-                                    fontWeight : 'bold',
-                                    fontSize : {md : '12px', lg : '15px'}
-                                }}
-                            >
-                                {`$${item.price}.00`}
-                            </Typography>
-                        </Box>
-                    </Box>
+                        <CarouselImageComponent 
+                            key={index}
+                            item={item}
+                        />
                     )
             })}
         </Box>
@@ -150,9 +130,11 @@ const ShopListComponent = () => {
                 <ArrowBackIosNewOutlinedIcon />
             </IconButton>
                 { 
-                    groupsLst.map((i, index) => {
+                    groupsLst.map((i, key) => {
                         return(
-                            <FiberManualRecordOutlinedIcon key={index}/>
+                            i === index.group
+                            ?<FiberManualRecordIcon key={key} />
+                            :<FiberManualRecordOutlinedIcon key={key}/>
                         )
                     })
                     
