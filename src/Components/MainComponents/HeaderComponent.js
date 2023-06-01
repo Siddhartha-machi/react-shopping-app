@@ -20,7 +20,11 @@ const HeaderComponent = () => {
             justifyContent : { md : 'space-around', xs : 'space-between'}
         }}
     >
-        <IconButton>
+        <IconButton
+            sx={{
+                display : { xs : 'flex', md : 'none'} ,
+            }}
+        >
             <MenuIcon />
         </IconButton>
         {/* Site name and caption */}

@@ -11,9 +11,9 @@ const LandingSection = ({children, img}) => {
         sx={{
             display  : 'flex',
             backgroundImage : `url(${img})`,
-            backgroundSize : large ? 'cover' : 'contain',
-            minHeight : { md : '440px', lg : '500px'},
-            maxHeight : { md : '440px', lg : '500px'},
+            backgroundSize : { lg : 'cover' , md : 'contain', xs : 'cover'},
+            minHeight : {xs : '150px', md : '440px', lg : '500px'},
+            maxHeight : {xs : 'auto', md : '440px', lg : '500px'},
             flex : 1,
             backgroundRepeat : 'no-repeat',
             backgroundColor : 'pink'

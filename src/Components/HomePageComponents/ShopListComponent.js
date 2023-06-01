@@ -8,7 +8,8 @@ const ShopListComponent = () => {
   return (
     <Box
         sx={{
-            display : 'flex'
+            display : 'flex',
+            flexDirection : { xs : 'column', md : 'row'}
         }}
     >
         {clothesList.map((item) => {

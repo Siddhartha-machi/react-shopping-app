@@ -1,8 +1,11 @@
-import { Button, OutlinedInput, TextField, Typography } from '@mui/material'
+import { Button, createTheme, OutlinedInput, TextField, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
 
 const SubscribeComponent = () => {
+
+   
+
   return (
     <Box
         sx={{
@@ -12,8 +15,8 @@ const SubscribeComponent = () => {
             justifyContent : 'space-evenly',
             borderTop : `1px solid lightgrey`,
             borderBottom : `1px solid lightgrey`,
-            minHeight : '10rem',
-            maxHeight : '10rem',
+            minHeight :{ md : '10rem', xs : '250px'},
+            px : {md : 0, xs : '10px'},
             py : '10px'
         }}
     >
@@ -39,7 +42,8 @@ const SubscribeComponent = () => {
         <Box
             component={'form'}
             sx={{
-                display : 'flex'
+                display : 'flex',
+                flexDirection : { xs : 'column', md : 'row'}
             }}
         >
             <OutlinedInput
@@ -47,9 +51,8 @@ const SubscribeComponent = () => {
                 placeholder="Email Address *" 
                 required
                 type='email'
-                inputProps={{
-                    my : '5px'
-                }}
+                size={'small'}
+                
             >
                 
             </OutlinedInput>
@@ -60,7 +63,8 @@ const SubscribeComponent = () => {
                     textTransform : 'none',
                     backgroundColor : 'black',
                     color : 'white',
-                    mx : '10px',
+                    mx : { xs : 0, md : '10px'},
+                    my : { xs : '10px', md : '0px'},
                     fontWeight : 'bold'
                 }}
             >

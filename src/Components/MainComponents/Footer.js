@@ -11,9 +11,10 @@ const Footer = () => {
     <Box
         sx={{
             display : 'flex',
+            flexDirection : { md : 'row', xs : 'column'},
             justifyContent : 'space-between',
-            pb : '10px',
-            mb : '10px',
+            alignItems : 'center',
+            py : '12px',
             flex : 1,
             color : 'grey',
             px : '12px'
@@ -23,6 +24,7 @@ const Footer = () => {
         <Box
             sx={{
                 display : 'flex',
+                flexDirection : { md : 'row', xs : 'column'},
                 alignItems : 'center'
             }}
         >
@@ -49,6 +51,7 @@ const Footer = () => {
         <Box
             sx={{
                 display : 'flex',
+                my : { xs : '10px', md : 0}
             }}
         >
             {socialIcons.map((Icon, index) => {

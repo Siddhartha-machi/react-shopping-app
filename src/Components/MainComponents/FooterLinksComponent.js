@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from '@mui/material'
+import { Box, Button, Divider, Typography } from '@mui/material'
 import React from 'react'
 import { deliveryDetails, serviceData } from './Constants'
 import NavigationComponent from './NavigationComponent'
@@ -9,7 +9,9 @@ const FooterListComponent = (props) => {
         display : 'flex',
         flexDirection : 'column',
         alignItems : 'center',
-        justifyContent : 'flex-start'
+        justifyContent : 'flex-start',
+        my : { xs : '10px', md : 0},
+        borderBottom : { xs : '1px solid grey', md : 'none'}
     }
     return (
         <Box
@@ -57,10 +59,11 @@ const FooterLinksComponent = () => {
     <Box
         sx={{
             display :'flex',
-            alignItems :'flex-start',
+            flexDirection : { md : 'row', xs : 'column'},
+            alignItems :{ md : 'flex-start', xs : 'center'},
             justifyContent : 'space-around',
             borderBottom : `1px solid lightgrey`,
-            my : '10px'
+            py : '10px',
         }}
     >
         {/* Customer service */}
@@ -68,6 +71,7 @@ const FooterLinksComponent = () => {
             data={serviceData}
             title='CUSTOMER SERVICE'
         />
+
 
         {/* Our guarantees */}
         <FooterListComponent
@@ -91,7 +95,7 @@ const FooterLinksComponent = () => {
                 >
                     {'OUR COMPANY'}
                 </Typography>
-            <NavigationComponent direction={true}/>
+            <NavigationComponent direction={true} display/>
         </Box>
             
     </Box>

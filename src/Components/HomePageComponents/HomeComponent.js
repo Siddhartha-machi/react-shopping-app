@@ -19,7 +19,7 @@ const DataComponent = () => {
         sx={{
             display : 'flex',
             flexDirection : 'column',
-            flex : 0.4,
+            flex : { md : 0.4, xs : 0.6},
             alignItems : 'center',
             justifyContent : 'center',
             // backgroundColor : 'green'
@@ -27,7 +27,7 @@ const DataComponent = () => {
       >
           <Typography
               sx={{
-                  fontSize : { md : '25px', lg : '30px'},
+                  fontSize : { xs : '12px', md : '25px', lg : '30px'},
                   fontWeight : 'bold',
                   mb : '10px'
               }}
@@ -48,7 +48,8 @@ const DataComponent = () => {
                       backgroundColor : 'black',
                       color : 'white',
                       mr : '10px',
-                      px : '23px'
+                      px : { md : '23px'},
+                      fontSize : { xs : '6px', md : 'auto'}
                   }}
               >
                   For Men
@@ -60,7 +61,7 @@ const DataComponent = () => {
                       fontWeight : 'bold',
                       backgroundColor : 'black',
                       color : 'white',
-                      
+                      fontSize : { xs : '6px', md : 'auto'}
                   }}
               >
                   For Women
