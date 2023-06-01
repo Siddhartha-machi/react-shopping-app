@@ -10,14 +10,14 @@ export const RatingsComponent = () => {
             justifyContent : 'center',
             alignItems : 'center',
             mt : '12px',
-            minHeight : '250px',
+            minHeight : { md : '250px', xs : '120px'},
             // backgroundColor :' green'
         }}
     >
         <Box
             sx={{
                 display : 'flex',
-                flex : 0.5,
+                flex : { md : 0.5, xs : 1},
                 height : { md : '150px'},
                 px : '10px',
                 flexDirection : 'column',
@@ -32,7 +32,9 @@ export const RatingsComponent = () => {
                 variant='body1'
                 sx={{
                     fontWeight : 550,
-                    fontSize : { md : '12px'}
+                    fontSize : { xs : '8px', md : '12px'},
+                    pl : { xs : '10px', md : 0},
+                    pb : { xs : '10px', md : 0}
                 }}
             >
                 It is a long established fact that a reader will be distracted by the
@@ -43,7 +45,9 @@ export const RatingsComponent = () => {
                 variant='body1'
                 sx={{
                     fontWeight : 550,
-                    fontSize : { md : '10px'}
+                    fontSize : { xs : '6px', md : '12px'},
+                    pl : { xs : '10px', md : 0},
+                    pb : { xs : '10px', md : 0}
                 }}
             >
                 Danny Betteridge

@@ -11,12 +11,14 @@ const RateComponent = () => {
     <Box
         sx={{
             display : 'flex',
+            pl : { xs : '10px', md : 0},
+            py : { xs : '10px', md : 0}
         }}
     >
         {[1, 2, 3, 4, 5].map((rate) => {
             return(
                 rate <= rating 
-                    ?<GradeIcon key={rate}/>
+                    ?<GradeIcon key={rate} sx={{ fontSize : {xs : '12px', md : '23px'}}}/>
                     :<GradeOutlinedIcon key={rate}/>
             )
         })}

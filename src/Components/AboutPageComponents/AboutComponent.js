@@ -25,7 +25,9 @@ const AboutDataComponent = () => {
       <Typography
         variant='h4'
         sx={{
+          fontSize : {xs : '15px', md : '35px'},
           fontWeight : 1000,
+          mt : { xs : '10px', md : 0},
           textAlign : 'center'
         }}
       >
@@ -38,7 +40,7 @@ const AboutDataComponent = () => {
           textAlign : 'center',
           p : '15px',
           mx : 'auto',
-          fontSize : { md : '15px'}
+          fontSize : { xs : '8px', md : '15px'}
         }}
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
@@ -71,6 +73,7 @@ const AboutComponent = () => {
         <Box
           sx={{
             display : 'flex',
+            flexDirection : { xs : 'column', md : 'row'},
             flex : 1,
             py : '10px'
           }}
@@ -78,11 +81,12 @@ const AboutComponent = () => {
           <ClothesListComponent 
             list={aboutPageImages.slice(0,2)}
           ></ClothesListComponent>
+
           <ClothesListComponent 
             list={[aboutPageImages[2]]}
             primaryLabel={'WE DARE TO DESIGN THE FUTURE'}
             imageStyles={{
-              pl : '10px'
+              pl : { md : '10px', xs : 0}
             }}
             styles={{
               fontSize : '25px',
@@ -105,6 +109,7 @@ const AboutComponent = () => {
         <Box
           sx={{
             display : 'flex',
+            flexDirection : { xs : 'column-reverse', md : 'row'},
             flex : 1
           }}
         >

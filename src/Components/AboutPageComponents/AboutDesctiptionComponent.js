@@ -22,7 +22,8 @@ const AboutDesctiptionComponent = () => {
             variant='h6'
             sx={{
                 fontWeight : 'bold',
-                pb :  { md : '12px'},
+                fontSize : {xs : '16px', md : '25px'},
+                pb :  { xs : '10px', md : '12px'},
             }}
         >
             A TEAM THAT'S
@@ -33,7 +34,7 @@ const AboutDesctiptionComponent = () => {
         <Typography
             variant='subtitle1'
             sx={{
-                fontSize : { md : '12px'},
+                fontSize : {xs : '11px', md : '12px'},
                 pb :  { md : '12px'},
             }}
         >
@@ -55,7 +56,7 @@ const AboutDesctiptionComponent = () => {
                         component={'li'}
                         key={index}
                         sx={{
-                            fontSize : { md : '12px'}
+                            fontSize : {xs : '11px', md : '12px'},
                         }}
                     >
                         {text}

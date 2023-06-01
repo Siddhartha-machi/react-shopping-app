@@ -32,8 +32,9 @@ const SubscribeComponent = () => {
             sx={{
                 fontWeight : 550,
                 // pb : '10px',
+                textAlign : 'center',
                 color : 'grey',
-                fontSize : { md : '10px', lg : '12px'}
+                fontSize : { xs : '12px' , md : '10px', lg : '12px'}
             }}
         >
             {`You may unsubscribe at any moment. 
