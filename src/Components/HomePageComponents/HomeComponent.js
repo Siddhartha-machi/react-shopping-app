@@ -89,15 +89,35 @@ export const HomeComponent = () => {
         <LandingSection img={image}>
             <DataComponent />
         </LandingSection>
+
         <SectionNameComponent label='Trending Clothing'/>
-        <ClothesListComponent list={clothesList}/>
+        
+        <ClothesListComponent 
+          list={clothesList}
+          primaryLabel={'Summer Clothes 2021/22'}
+        />
 
         {/* Carousel component placeholder */}
         <SectionNameComponent label='Clearance'/>
+
         <ClothesListComponent 
           list={clearanceList}
-          extra={true}
-        />
+          primaryLabel={'Summer Clothes 2021/22'}
+        >
+          <Button
+              variant='contained'
+              sx={{
+                  textTransform : 'none',
+                  backgroundColor : 'white',
+                  color : 'black',
+                  mr : 'auto',
+                  mt : '10px'
+              }}
+          >
+              Shop
+          </Button>
+        </ClothesListComponent>
+
         <SectionNameComponent label='Shop Best Sellers'/>
         <ShopListComponent />
     </Box>

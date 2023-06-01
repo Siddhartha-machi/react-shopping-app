@@ -9,6 +9,10 @@ import Fb from '../../Icons/facebook.svg'
 import Twitter from '../../Icons/twitter.svg'
 import LinkedIn from '../../Icons/linkedin.svg'
 
+import api1 from '../../Images/aboutImage1.avif'
+import api2 from '../../Images/aboutImage2.avif'
+import api3 from '../../Images/aboutImage3.avif'
+
 
 const navigationConsts = [
     {
@@ -80,10 +84,17 @@ const socialIcons = [
     LinkedIn
 ]
 
+const aboutPageImages = [
+    api1,
+    api2,
+    api3
+]
+
 export {
     navigationConsts,
     clothesList,
     deliveryDetails,
     serviceData,
-    socialIcons
+    socialIcons,
+    aboutPageImages
 }

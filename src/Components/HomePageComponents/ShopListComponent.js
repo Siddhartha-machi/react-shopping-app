@@ -53,7 +53,8 @@ const ShopListComponent = () => {
                                 color : 'grey',
                                 textAlign : 'center',
                                 fontWeight : 'bold',
-                                fontSize : {md : '12px', lg : '15px'}
+                                fontSize : {md : '12px', lg : '15px'},
+                                py : '3px'
                             }}
                         >
                             {item.text}

@@ -21,7 +21,7 @@ const ClothesListComponent = (props) => {
                     sx={{
                         display : 'flex',
                         position : 'relative',
-                        pr : index != props.list.length - 1 ? '10px' : '0px'
+                        pr : index != props.list.length  ? '10px' : '0px'
                     }}
                 >
                     <Box 
@@ -44,25 +44,13 @@ const ClothesListComponent = (props) => {
                         <Typography
                             sx={{
                                 fontWeight : 'bold',
-                                color : 'white'
+                                color : 'white',
+                                ...props.styles,
                             }}
                         >
-                            Summer Clothes 2021/22
+                            {props.primaryLabel}
                         </Typography>
-                        {props.extra 
-                        ? <Button
-                            variant='contained'
-                            sx={{
-                                textTransform : 'none',
-                                backgroundColor : 'white',
-                                color : 'black',
-                                mr : 'auto',
-                                mt : '10px'
-                            }}
-                        >
-                            Shop
-                        </Button>
-                        : false}
+                        {props.children}
                     </Box>
                     
                 </Box>
